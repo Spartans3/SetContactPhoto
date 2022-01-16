@@ -24,6 +24,21 @@ class ViewController: UIViewController {
         return button
     }()
     
+    let colors: [UIColor] = [
+        .systemPink,
+        .systemYellow,
+        .systemGreen,
+        .systemPurple,
+        .systemRed,
+        .systemBlue
+    ]
+    
+    @objc func didTapButton() {
+        getRandomPhoto()
+        
+        view.backgroundColor = colors.randomElement()
+    }
+    
     
     
     override func viewDidLoad() {
@@ -39,9 +54,7 @@ class ViewController: UIViewController {
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     }
     
-    @objc func didTapButton(){
-        getRandomPhoto()
-    }
+
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
